@@ -1,0 +1,27 @@
+{
+  "name": "trip_planner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets",
+		"start": "npm run build-css & nodemon -e html,css,js app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "body-parser": "^1.15.0",
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4",
+    "jquery": "^2.2.2",
+    "mongoose": "^4.4.8",
+    "morgan": "^1.7.0",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "node-sass": "^3.4.2"
+  }
+}

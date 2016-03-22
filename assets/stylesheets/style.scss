@@ -1,0 +1,114 @@
+body, html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.mapAndTripSelector {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#map-canvas {
+  flex-basis: 76%;
+}
+
+.selector {
+  flex-basis: 30%;
+  background: #bbb;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  top: 0;
+  background-color: black;
+  flex-basis: 15%;
+  height: 50px;
+  a {
+    &.selected {
+      color: #aaa;
+      text-decoration: underline;
+    }
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5em;
+    &:hover{
+      color: #777;
+      text-decoration: none;
+    }
+  }
+}
+
+
+.centerSelector {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  background: #ccc;
+  background: #ccc;
+  border-top: solid black 4px;
+  display: flex;
+  flex-basis: 30%;
+}
+.daySelector {
+  margin: 1.5em auto 1em auto;
+  flex-basis: 15%;
+}
+.tripSelector {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 60%;
+  margin-left: 0.4em;
+  margin-bottom: 1em;
+  // align-items: center;
+}
+
+$dayButtonText: black;
+$dayButtonBackground: white;
+
+.btn-secondary {
+  background: $dayButtonBackground;
+  color: $dayButtonText;
+  border: solid #ccc 1px;
+  border-radius: 2em;
+  height: 45px;
+  font-size: 1.3em;
+  &:hover {
+    color: invert($dayButtonText);
+    background: invert($dayButtonBackground);
+  }
+}
+
+.btn-sm {
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 8px;
+  // width: 20px;
+}
+.tripOption {
+  margin-top: 0.3em;
+}
+label {
+  font-size: 1.2em;
+}
+
+
+.logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white
+}

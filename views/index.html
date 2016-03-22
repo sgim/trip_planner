@@ -1,26 +1,68 @@
-<!doctype html>
-<html>
-	<head>
-		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
-		<link rel="stylesheet" href="/stylesheets/style.css">
-		<script src="/jquery/dist/jquery.js"></script>
-		<script src="/bootstrap/dist/js/bootstrap.js"></script>
-	</head>
-	<body>
-		<select>
-		{% for hotel in hotels %}
-		  <option>{{hotel.name}}</option>
-		{% endfor %}
-		</select>
-		<select>
-		{% for restaurant in restaurants %}
-		  <option>{{restaurant.name}}</option>
-		{% endfor %}
-		</select>
-		<select>
-		{% for activity in activities %}
-		  <option>{{activity.name}}</option>
-		{% endfor %}
-		</select>
-	</body>
-</html>
+{% extends "layout.html"%}
+
+{% block content %}
+<div class="logo" href="/">Trip Planner</div>
+<div class="mapAndTripSelector">
+	<div id="map-canvas"></div>
+	<div class="selector">
+		<nav>
+      <a href="/" class="selected">MAP</a>
+      <a href="/about">ABOUT</a>
+      <a href="/contact">CONTACT</a>
+    </nav>
+			<div class="daySelector">
+				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+				  <div class="btn-group" role="group" aria-label="First group">
+				    <button type="button" class="btn btn-secondary">1</button>
+						<button type="button" class="btn btn-secondary">2</button>
+						<button type="button" class="btn btn-secondary">3</button>
+						<button type="button" class="btn btn-secondary">4</button>
+						<button type="button" class="btn btn-secondary" id="addDay">+</button>
+				  </div>
+				</div>
+			</div>
+			<div class="tripSelector">
+				<label>Hotels:</label>
+				<div class="tripOption">
+					<select class="btn btn-info dropdown-toggle">
+						{% for hotel in hotels %}
+						  <option>{{hotel.name}}</option>
+						{% endfor %}
+						</select>
+						<button type="button" class="btn btn-primary btn-sm">+</button>
+				</div>
+				<label>Restaurants:</label>
+					<div class="tripOption">
+					<select class="btn btn-info dropdown-toggle">
+					{% for restaurant in restaurants %}
+					  <option>{{restaurant.name}}</option>
+					{% endfor %}
+					</select>
+					<button type="button" class="btn btn-primary btn-sm">+</button>
+				</div>
+				<label>Activities:</label>
+					<div class="tripOption">
+					<select class="btn btn-info dropdown-toggle">
+					{% for activity in activities %}
+					  <option>{{activity.name}}</option>
+					{% endfor %}
+				</select>
+				<button type="button" class="btn btn-primary btn-sm">+</button>
+			</div>
+			</div>
+			<div class="centerSelector">
+				<div class="itinerary">
+					Itinerary
+				</div>
+				<div class="dayOne">
+					Day One:
+				</div>
+				<div class="schedule">
+					2:00PM: Check into hotel
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
